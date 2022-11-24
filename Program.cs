@@ -10,7 +10,18 @@ namespace _1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello digital world");
+            // The arithmetic mean of two numbers. The first homework assignment from #SimpleCode
+
+
+            Console.WriteLine("Write the first number: ");
+            int FirstNumber = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Write the second number: ");
+            int SecondNumber = Convert.ToInt32(Console.ReadLine());
+
+            int ArithmeticMean = (FirstNumber + SecondNumber) / 2;
+
+            Console.WriteLine("The arithmetic mean of two numbers " + FirstNumber + " and " + SecondNumber + " equals " + ArithmeticMean);
         }
     }
 }
