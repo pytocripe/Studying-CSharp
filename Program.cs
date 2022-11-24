@@ -10,18 +10,19 @@ namespace _1
     {
         static void Main(string[] args)
         {
-            // The arithmetic mean of two numbers. The first homework assignment from #SimpleCode
+            // Checking a number for evenness. The second homework assignment from #SimpleCode.
 
+            Console.Write("Write a number to check for evenness: ");
+            int number = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Write the first number: ");
-            int FirstNumber = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Write the second number: ");
-            int SecondNumber = Convert.ToInt32(Console.ReadLine());
-
-            int ArithmeticMean = (FirstNumber + SecondNumber) / 2;
-
-            Console.WriteLine("The arithmetic mean of two numbers " + FirstNumber + " and " + SecondNumber + " equals " + ArithmeticMean);
+            if (number % 2 == 0)
+            {
+                Console.WriteLine("the number is even");
+            }
+            else
+            {
+                Console.WriteLine("the number is not even");
+            }
         }
     }
 }
