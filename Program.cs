@@ -10,66 +10,51 @@ namespace _1
     {
         static void Main(string[] args)
         {
-            //A simple calculator for two number. The third homework assignment from #SimpleCode.
+            //Sum and number of even and odd numbers in the range specified by the user. The fourth homework assignment from #SimpleCode.
+            int BeginningRange = 0;
+            int EndRange = 0;
+            int EvennumberСounter = 0;
+            int OddnumberCounter = 0;
+            int SumEvenNumber = 0;
+            int SumOddNumber = 0;
 
-            while (true)
+            try
             {
-                double FirstNumber = 0;
-                double SecondNumber = 0;
-
-                try
-                {
-                    Console.Write("Write first number: ");
-                     FirstNumber = Convert.ToDouble(Console.ReadLine());
-                    Console.Write("Write second number: ");
-                    SecondNumber = Convert.ToDouble(Console.ReadLine());
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Is not a number");
-                    continue;
-                }
-
-                Console.Write("Select action: '+' '-' '*' '/': ");
-                string action = Console.ReadLine();
-
-                switch (action)
-                {
-                    case "+":
-                        Console.WriteLine("The sum of the number " + FirstNumber + " and " + SecondNumber + " is " + (FirstNumber + SecondNumber));
-                        break;
-                    case "-":
-                        Console.WriteLine("The difference of the number " + FirstNumber + " and " + SecondNumber + " is " + (FirstNumber - SecondNumber));
-                        break;
-                    case "/":
-                        if (SecondNumber == 0)
-                        {
-                            Console.WriteLine("You can't divide by zero.");
-                            Console.ReadKey();
-                            Console.Clear();
-                            continue;
-                        }
-                      Console.WriteLine("The divide of the number " + FirstNumber + " by " + SecondNumber + " is " + (FirstNumber / SecondNumber));
-                        break;
-
-                    case "*":
-                     Console.WriteLine("The multiply of the number " + FirstNumber + " by " + SecondNumber + " is " + (FirstNumber * SecondNumber));
-                        break;
-                    default:
-                        Console.WriteLine("It is not an arithmetic action");
-                        break;
-
-                }
-
-                Console.ReadKey();
-                Console.Clear();
-
-
+                Console.Write("Write the beginning of the range: ");
+                BeginningRange = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Write the end of the range: ");
+                 EndRange = Convert.ToInt32(Console.ReadLine());
 
             }
-            
+            catch (Exception)
+            {
 
+                Console.WriteLine("Is not a number");
+                return;
+            }
 
+            while (BeginningRange <= EndRange)
+            {
+                if (BeginningRange % 2 == 0)
+                {
+                    EvennumberСounter++;
+                    SumEvenNumber = SumEvenNumber + BeginningRange;
+                }
+                else
+                {
+                    OddnumberCounter++;
+                    SumOddNumber = SumOddNumber + BeginningRange;
+                }
+
+                BeginningRange++;
+
+            }
+
+            Console.Write("The number of even numbers in this range is: " + EvennumberСounter);
+            Console.WriteLine();
+            Console.WriteLine("The number of odd numbers in this range is: " + OddnumberCounter);
+            Console.WriteLine("Sum of even numbers in this range is: " + SumEvenNumber);
+            Console.WriteLine("Sum of odd numbers in this range is: " + SumOddNumber);
 
         }
     }
