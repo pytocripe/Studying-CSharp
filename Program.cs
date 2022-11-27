@@ -10,51 +10,69 @@ namespace _1
     {
         static void Main(string[] args)
         {
-            //Sum and number of even and odd numbers in the range specified by the user. The fourth homework assignment from #SimpleCode.
-            int BeginningRange = 0;
-            int EndRange = 0;
-            int EvennumberСounter = 0;
-            int OddnumberCounter = 0;
-            int SumEvenNumber = 0;
-            int SumOddNumber = 0;
+            //Draw four different triangles in the console using nested loops. The fifth homework assignment from #SimpleCode.
 
-            try
+
+            Console.Write("Enter the height of the triangle: ");
+            int height = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Normal triangle: ");
+
+            for (int i = 0; i <= height; i++)
             {
-                Console.Write("Write the beginning of the range: ");
-                BeginningRange = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Write the end of the range: ");
-                 EndRange = Convert.ToInt32(Console.ReadLine());
-
-            }
-            catch (Exception)
-            {
-
-                Console.WriteLine("Is not a number");
-                return;
-            }
-
-            while (BeginningRange <= EndRange)
-            {
-                if (BeginningRange % 2 == 0)
+                for (int j = 0; j <= i; j++)
                 {
-                    EvennumberСounter++;
-                    SumEvenNumber = SumEvenNumber + BeginningRange;
+                    Console.Write("#");
                 }
-                else
-                {
-                    OddnumberCounter++;
-                    SumOddNumber = SumOddNumber + BeginningRange;
-                }
-
-                BeginningRange++;
-
+                Console.WriteLine("");
             }
 
-            Console.Write("The number of even numbers in this range is: " + EvennumberСounter);
             Console.WriteLine();
-            Console.WriteLine("The number of odd numbers in this range is: " + OddnumberCounter);
-            Console.WriteLine("Sum of even numbers in this range is: " + SumEvenNumber);
-            Console.WriteLine("Sum of odd numbers in this range is: " + SumOddNumber);
+            Console.WriteLine("Triangle in reverse: ");
+
+            for (int i = 0; i <= height; i++)
+            {
+                for (int j = height; j >= i; j--)
+                {
+                    Console.Write("#");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("I don't know what to call this triangle: ");
+
+            for (int i = 0; i <= height; i++)
+            {
+                for (int g = height; g > i; g--)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int j = 0; j <= i; j++)
+                {
+                    Console.Write("#");
+                }
+                Console.WriteLine("");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("'I don't know what to call this triangle' in reverse order: ");
+
+            for (int i = 0; i <= height; i++)
+            {
+                for (int g = 0; g < i; g++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int j = height; j >= i; j--)
+                {
+                    Console.Write("#");
+                }
+                Console.WriteLine();
+            }
+
 
         }
     }
