@@ -10,8 +10,10 @@ namespace _1
     {
         static void Main(string[] args)
         {
-            //Array output in reverse order. The seventh homework assignment from #SimpleCode.
+            //Find the sum of even numbers in the array. The eighth homework assignment from #SimpleCode.
 
+
+            int sumArray = 0;
             Console.Write("Enter the number of array elements: ");
             int elements = Convert.ToInt32(Console.ReadLine());
 
@@ -23,15 +25,15 @@ namespace _1
                 array[i] = Convert.ToInt32(Console.ReadLine());
             }
 
-            Console.Write("The output of this array in reverse order: ");
-            Console.WriteLine();
-
-            for (int i = array.Length - 1; i >= 0; i--)
+            for (int i = 0; i < array.Length; i++)
             {
-                Console.WriteLine("The value for index " + (i + 1) + " is " + array[i]);
+                if (array[i] % 2 == 0)
+                {
+                    sumArray = sumArray + array[i];
+                }
             }
 
-
+            Console.WriteLine("The sum of even numbers in the array is: " + sumArray);
         }
     }
 }
