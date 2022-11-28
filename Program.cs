@@ -10,10 +10,8 @@ namespace _1
     {
         static void Main(string[] args)
         {
-            //Find the sum of even numbers in the array. The eighth homework assignment from #SimpleCode.
+            //Find the smallest element of an array. The ninth homework assignment from #SimpleCode.
 
-
-            int sumArray = 0;
             Console.Write("Enter the number of array elements: ");
             int elements = Convert.ToInt32(Console.ReadLine());
 
@@ -25,15 +23,21 @@ namespace _1
                 array[i] = Convert.ToInt32(Console.ReadLine());
             }
 
+            int smallestElement = array[0];
+            int smallestValue = array[0];
+
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] % 2 == 0)
+                if (smallestValue >= array[i])
                 {
-                    sumArray = sumArray + array[i];
+                    smallestElement = (i + 1);
+                    smallestValue = array[i];
                 }
+               
             }
 
-            Console.WriteLine("The sum of even numbers in the array is: " + sumArray);
+            Console.WriteLine("The smallest element of this array is: " + smallestElement + " with the value: " + smallestValue);
+          
         }
     }
 }
