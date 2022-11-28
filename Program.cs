@@ -10,69 +10,18 @@ namespace _1
     {
         static void Main(string[] args)
         {
-            //Draw four different triangles in the console using nested loops. The fifth homework assignment from #SimpleCode.
+            //Program for manually filling an array. The sixth homework assignment from #SimpleCode.
 
+            Console.Write("Enter the number of array elements: ");
+            int elements = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Enter the height of the triangle: ");
-            int height = Convert.ToInt32(Console.ReadLine());
+            int[] array = new int[elements];
 
-            Console.WriteLine("Normal triangle: ");
-
-            for (int i = 0; i <= height; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                for (int j = 0; j <= i; j++)
-                {
-                    Console.Write("#");
-                }
-                Console.WriteLine("");
+                Console.Write("Give value " + (i + 1) + " to the element of the array: ");
+                array[i] = Convert.ToInt32(Console.ReadLine());
             }
-
-            Console.WriteLine();
-            Console.WriteLine("Triangle in reverse: ");
-
-            for (int i = 0; i <= height; i++)
-            {
-                for (int j = height; j >= i; j--)
-                {
-                    Console.Write("#");
-                }
-                Console.WriteLine();
-            }
-
-            Console.WriteLine();
-            Console.WriteLine("I don't know what to call this triangle: ");
-
-            for (int i = 0; i <= height; i++)
-            {
-                for (int g = height; g > i; g--)
-                {
-                    Console.Write(" ");
-                }
-
-                for (int j = 0; j <= i; j++)
-                {
-                    Console.Write("#");
-                }
-                Console.WriteLine("");
-            }
-
-            Console.WriteLine();
-            Console.WriteLine("'I don't know what to call this triangle' in reverse order: ");
-
-            for (int i = 0; i <= height; i++)
-            {
-                for (int g = 0; g < i; g++)
-                {
-                    Console.Write(" ");
-                }
-
-                for (int j = height; j >= i; j--)
-                {
-                    Console.Write("#");
-                }
-                Console.WriteLine();
-            }
-
 
         }
     }
